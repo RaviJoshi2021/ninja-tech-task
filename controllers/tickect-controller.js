@@ -138,10 +138,10 @@ exports.statusChange = async(req, res) => {
 exports.ticketDetail = async(req, res) => {
     try {
         let ticket;
-        if (req.user.role == 'admin') {
+        if (req.user.role == 'admin' || req.user.role == 'client') {
             ticket = await Ticket.findById(req.params.id).populate('remarks.by', 'username');
         } else if (req.user.role == 'employee') {
-            ticket = await Ticket.findById(req.params.id).populate('remarks.by', 'username');
+            ticket = await Ticket.findById(req.params.id);
         }
         if (!ticket) {
             return res.status(404).send({ success: false, message: 'Ticket not found' });
