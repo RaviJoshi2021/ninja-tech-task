@@ -1,0 +1,283 @@
+{
+	"info": {
+		"_postman_id": "47c100c5-1159-4919-9fe4-1df9654566f2",
+		"name": "ninja-tech",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3710542"
+	},
+	"item": [
+		{
+			"name": "signUp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"a\",\r\n    \"password\":\"5535\",\r\n    \"role\": \"client\",\r\n    \"last_name\": \"Joshi\",\r\n    \"first_name\" : \"Ravi\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/signUp",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"signUp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"abc@gmail.com\",\r\n    \"password\": \"5535\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create-ticket",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWUwM2I4NmM3MTUxYzc4N2M3NmM3ZDMiLCJyb2xlIjoiZW1wbG95ZWUiLCJpYXQiOjE3MDkzMTE1MDZ9.accf-HvYIwwnv6_6TLF30WdvazKoiPmDgf_0XTG0kgg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Test",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/DELL/OneDrive/Pictures/3.jpg"
+						},
+						{
+							"key": "contentType",
+							"value": "image",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/create-ticket",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"create-ticket"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "remark-ticket",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWUwM2I4NmM3MTUxYzc4N2M3NmM3ZDMiLCJyb2xlIjoiZW1wbG95ZWUiLCJpYXQiOjE3MDkzMTE1MDZ9.accf-HvYIwwnv6_6TLF30WdvazKoiPmDgf_0XTG0kgg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"remark\": \"test\"   \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/tickets/65e2056b1f528cc7ffaea266/remarks",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tickets",
+						"65e2056b1f528cc7ffaea266",
+						"remarks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-ticket-status",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWUwNDc1YTkxZjY3ZDYxY2JjZWEwZDgiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDkzMTI3MzN9.W8WNr_mx_BcrjCSbYF-J_z1d8cxBPi6MjHHF17eLVGs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWUwM2I4NmM3MTUxYzc4N2M3NmM3ZDMiLCJyb2xlIjoiZW1wbG95ZWUiLCJpYXQiOjE3MDkzMTE1MDZ9.accf-HvYIwwnv6_6TLF30WdvazKoiPmDgf_0XTG0kgg"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"status\": \"approved\"   \r\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/tickets/65e2056b1f528cc7ffaea266/status",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tickets",
+						"65e2056b1f528cc7ffaea266",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-ticket-detail",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWUwNDc1YTkxZjY3ZDYxY2JjZWEwZDgiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDkzMTI3MzN9.W8WNr_mx_BcrjCSbYF-J_z1d8cxBPi6MjHHF17eLVGs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWUwM2I4NmM3MTUxYzc4N2M3NmM3ZDMiLCJyb2xlIjoiZW1wbG95ZWUiLCJpYXQiOjE3MDkzMTE1MDZ9.accf-HvYIwwnv6_6TLF30WdvazKoiPmDgf_0XTG0kgg"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"status\": \"approved\"   \r\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/tickets/65e2056b1f528cc7ffaea266",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tickets",
+						"65e2056b1f528cc7ffaea266"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ticket-lists",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWUwNDc1YTkxZjY3ZDYxY2JjZWEwZDgiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDkzMTI3MzN9.W8WNr_mx_BcrjCSbYF-J_z1d8cxBPi6MjHHF17eLVGs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWUwM2I4NmM3MTUxYzc4N2M3NmM3ZDMiLCJyb2xlIjoiZW1wbG95ZWUiLCJpYXQiOjE3MDkzMTE1MDZ9.accf-HvYIwwnv6_6TLF30WdvazKoiPmDgf_0XTG0kgg"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"status\": \"approved\"   \r\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/ticket-list",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ticket-list"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
